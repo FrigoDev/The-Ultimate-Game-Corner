@@ -1,9 +1,10 @@
 import "../assets/styles/gamesSection.css";
-import GameCard from "../components/gameCard";
+import GameCard from "../components/GameCard";
 import useGames from "../hooks/useGames";
-import NoContent from "../components/noContent";
+import NoContent from "../components/NoContent";
 import Pagination from "../components/Pagination";
-const GamesSection = ({ navigateTo }) => {
+import type {FormEvent,}  from "react"
+const GamesSection = ({ navigateTo }:{navigateTo:any}) => {
   const {
     games,
     page,
@@ -19,7 +20,9 @@ const GamesSection = ({ navigateTo }) => {
       <div className="search-container">
         <div className="input-group">
           <input
-            onInput={(e) => updateFilter(e.target.value.trim())}
+            onInput={(e:FormEvent<HTMLInputElement>)=> {
+              updateFilter(e.currentTarget.value.trim())
+            }}
             name="search"
             className="form-input"
             autoComplete="off"
