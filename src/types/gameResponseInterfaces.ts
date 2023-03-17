@@ -14,6 +14,38 @@ export interface RootGameRequest {
     nofollow_collections: string[];
 }
   
+export interface DetailedGameResponse {
+  id: number;
+  slug: string;
+  name: string;
+  released: string;
+  tba: boolean;
+  background_image: string;
+  rating: number;
+  rating_top: number;
+  ratings: Rating[];
+  ratings_count: number;
+  reviews_text_count: number;
+  added: number;
+  added_by_status: AddedByStatus;
+  metacritic: number;
+  playtime: number;
+  suggestions_count: number;
+  updated: string;
+  user_game: null;
+  reviews_count: number;
+  saturated_color: string;
+  dominant_color: string;
+  platforms: Platform[];
+  parent_platforms: ParentPlatform[];
+  genres: Genre[];
+  tags: Tag[];
+  publishers: Publisher[];
+  esrb_rating: EsrbRating;
+  clip: null;
+  description_raw: string;
+}
+
   interface Filters {
     years: Year2[];
   }
@@ -155,4 +187,30 @@ export interface RootGameRequest {
     count: number;
     percent: number;
   }
+  
+interface AddedByStatus {
+  yet: number;
+  owned: number;
+  beaten: number;
+  toplay: number;
+  dropped: number;
+  playing: number;
+}
 
+interface ParentPlatform {
+  platform: Platform;
+}
+
+interface Publisher {
+  id: number;
+  name: string;
+  slug: string;
+  games_count: number;
+  image_background: string;
+}
+
+interface EsrbRating {
+  id: number;
+  name: string;
+  slug: string;
+}
