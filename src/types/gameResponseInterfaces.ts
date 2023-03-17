@@ -44,6 +44,7 @@ export interface DetailedGameResponse {
   esrb_rating: EsrbRating;
   clip: null;
   description_raw: string;
+  developers: Developer[]
 }
 
   interface Filters {
@@ -213,4 +214,11 @@ interface EsrbRating {
   id: number;
   name: string;
   slug: string;
+}
+interface Developer {
+  id: number;
+  name: string;
+  slug: string;
+  games_count: number;
+  image_background: string;
 }
