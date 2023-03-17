@@ -1,0 +1,173 @@
+.games-section {
+  background: rgb(23, 61, 87);
+  background: linear-gradient(
+    90deg,
+    rgba(23, 61, 87, 1) 0%,
+    rgba(42, 71, 94, 1) 50%,
+    rgba(33, 54, 74, 1) 100%
+  );
+  padding: 1rem 2rem;
+  min-height: 95vh;
+}
+.games-section-title {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  padding: 1rem 0;
+}
+.page-error-text {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem 0;
+}
+.games-section-container {
+  width: 100%;
+  margin: auto;
+}
+.games-section-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  margin-right: 5%;
+  margin-bottom: 2rem;
+}
+.input-group {
+  position: relative;
+}
+.form-input {
+  width: 100%;
+  background: none;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  padding: 0.4rem 0;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  transform: translateY(-8px) scale(0.7);
+  transform-origin: left top;
+  filter: brightness(3);
+}
+.form-label {
+  color: var(--primary-color);
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 1px;
+  transform: translateY(10px);
+  transition: transform 0.5s, color 0.3s;
+}
+.column {
+  flex: 0 0 auto;
+  width: 40%;
+  margin: 1rem;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+}
+.card:hover {
+  scale: 1.05;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+.card-body {
+  padding: 0.5rem;
+}
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 5px;
+}
+.card-text {
+  color: #1a1a1a;
+  font-weight: 400;
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+.card-footer {
+  color: #fff;
+  padding: 1rem;
+  background: rgb(39, 131, 172);
+  background: linear-gradient(
+    90deg,
+    rgba(39, 131, 172, 1) 33%,
+    rgba(28, 106, 143, 1) 66%,
+    rgba(26, 86, 122, 1) 100%
+  );
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 5px 5px;
+}
+.card-footer-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  color: var(--secondary-color);
+  font-size: 0.8rem;
+}
+.card-footer-item {
+  padding: 0 0.4rem;
+}
+.card-footer-icon {
+  margin-right: 0.1rem;
+}
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+.pagination-ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination-li {
+  cursor: pointer;
+}
+.pagination-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
