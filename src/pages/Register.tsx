@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "../assets/styles/form.css";
-import ErrorNotify from "./ErrorNotify";
+import ErrorNotify from "../components/ErrorNotify";
 import { newUser } from "../utils/dataFetcher";
 
-const Register = ({ navigateTo }) => {
+const Register = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",

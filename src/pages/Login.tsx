@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../assets/styles/form.css";
-import ErrorNotify from "./ErrorNotify";
-const Login = ({ login, errors, navigateTo, user }) => {
+import ErrorNotify from "../components/ErrorNotify";
+const Login = ({ login, errors, user }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: ""
