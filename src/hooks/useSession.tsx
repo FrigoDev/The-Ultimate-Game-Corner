@@ -3,7 +3,7 @@ import { getSession, loginSession } from "../utils/dbSocket";
 
 const useSession = () => {
   const [session, setSession] = useState();
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState([] as string[]);
   const restoreSession = async () => {
     return setSession(await getSession());
   };
@@ -12,7 +12,7 @@ const useSession = () => {
     restoreSession();
   }, []);
 
-  const login = async (user, password) => {
+  const login = async (user:string, password:string) => {
     const loggedUser = await loginSession(user, password);
     if (loggedUser) {
       setSession(loggedUser);
@@ -22,7 +22,7 @@ const useSession = () => {
     }
   };
   const logOut = () => {
-    setSession();
+    setSession(undefined);
     localStorage.clear();
   };
 
