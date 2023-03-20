@@ -4,7 +4,8 @@ import useGames from "../hooks/useGames";
 import NoContent from "../components/NoContent";
 import Pagination from "../components/Pagination";
 import type {FormEvent,}  from "react"
-const GamesSection = ({ navigateTo }:{navigateTo:any}) => {
+import { useNavigate } from "react-router-dom";
+const GamesSection = () => {
   const {
     games,
     page,
@@ -13,7 +14,7 @@ const GamesSection = ({ navigateTo }:{navigateTo:any}) => {
     goOnePageForward,
     updateFilter
   } = useGames();
-
+  const navigate = useNavigate(); 
   return (
     <main className="games-section">
       <h2 className="games-section-title">Games</h2>
@@ -41,7 +42,7 @@ const GamesSection = ({ navigateTo }:{navigateTo:any}) => {
             <GameCard
               key={game.id}
               {...game}
-              redirect={() => navigateTo(`/game/${game.id}`)}
+              redirect = {() => navigate(`/game/${game.id}`)}
             />
           ))}
           {games.length === 0
