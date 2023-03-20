@@ -1,7 +1,7 @@
 import "../assets/styles/gameDescription.css";
 import "../assets/styles/mediaquerys.css";
 import { getGame } from "../utils/dbSocket";
-import Comments from "../components/comments";
+import Comments from "../components/Comments";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,16 +11,22 @@ import {
   faGamepad,
   faStar
 } from "@fortawesome/free-solid-svg-icons";
-const GameDescription = ({ user }) => {
-  const [game, setGame] = useState({});
-  const id = window.location.pathname.split("/")[2];
+import  {DetailedGame} from  "../types/Game" 
+import { User } from "../types/user";
+import { useParams } from "react-router-dom";
+
+const GameDescription = ({ user } :{user:User|undefined}) => {
+  const [game, setGame] = useState<DetailedGame | undefined>(undefined)
+  const {gameId:id} = useParams<{gameId:string}>();
+  console.log(id);
+  
   const updateGame = async () => {
     setGame(await getGame(Number(id)));
   };
   useEffect(() => {
     updateGame();
   }, []);
-  if (!game.name) {
+  if (!game) {
     return (
       <main className="detail-section">
         <div className="games-section-container">
