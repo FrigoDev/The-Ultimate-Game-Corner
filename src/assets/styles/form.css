@@ -26,6 +26,13 @@
   text-align: center;
   padding: 1rem 0;
 }
+.form-text {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem 0;
+}
 .btn-container {
   display: flex;
   justify-content: space-between;
