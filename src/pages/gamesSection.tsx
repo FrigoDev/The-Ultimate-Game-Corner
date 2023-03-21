@@ -5,6 +5,7 @@ import NoContent from "../components/NoContent";
 import Pagination from "../components/Pagination";
 import type {FormEvent,}  from "react"
 import { useNavigate } from "react-router-dom";
+
 const GamesSection = () => {
   const {
     games,
@@ -12,7 +13,8 @@ const GamesSection = () => {
     totalPages,
     goOnePageBack,
     goOnePageForward,
-    updateFilter
+    updateFilter,
+    filter
   } = useGames();
   const navigate = useNavigate(); 
   return (
@@ -25,6 +27,7 @@ const GamesSection = () => {
               updateFilter(e.currentTarget.value.trim())
             }}
             name="search"
+            value={filter}
             className="form-input"
             autoComplete="off"
             type="text"
