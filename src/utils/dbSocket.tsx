@@ -32,7 +32,6 @@ const getSession = async () => {
 };
 const loginSession = async (email: string, password: string) => {
   const user = await getUserByEmailAndPassword(email, password);
-  if (user) localStorage.setItem("session", JSON.stringify(user));
   return user;
 };
 export { getGames, getGame, getComments, addComment, getSession, loginSession };
