@@ -1,16 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 import {
   faTags,
   faCalendarDay
 } from "@fortawesome/free-solid-svg-icons";
 
-const GameCard = ({
+const GameCard = React.memo(({
   name,
   image,
   releaseDate,
   genres,
   redirect
-}) => {
+}: {name:string, image:string, releaseDate:string, genres:Array<string>, redirect:() => void}) => {
   return (
     <div className="column">
       <div className="card" onClick={redirect}>
@@ -36,5 +37,5 @@ const GameCard = ({
       </div>
     </div>
   );
-};
+});
 export default GameCard;
