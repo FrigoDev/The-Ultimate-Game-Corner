@@ -3,7 +3,7 @@ export enum PageRoutes {
     HOME = "/",
     GAME ="/game",
     LOGIN = "/login",
-    REGISTER = "/register",
+    REGISTER = "/register"
 }
 /*  ---------------Params-------------------   */
 export enum Params{

@@ -18,7 +18,6 @@ import { useParams } from "react-router-dom";
 const GameDescription = ({ user } :{user:User|undefined}) => {
   const [game, setGame] = useState<DetailedGame | undefined>(undefined)
   const {gameId:id} = useParams<{gameId:string}>();
-  console.log(id);
   
   const updateGame = async () => {
     setGame(await getGame(Number(id)));
