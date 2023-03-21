@@ -1,6 +1,7 @@
-import "../assets/styles/comments.css";
 import useComments from "../hooks/useComments";
 import NoContent from "./NoContent";
+import "../assets/styles/comments.css";
+
 const Comments = ({ gameId, sessionUser }) => {
   const { addComent, comments } = useComments(gameId);
 
@@ -31,8 +32,8 @@ const Comments = ({ gameId, sessionUser }) => {
                 className="comment-content"
                 name="comment"
                 id="comment-content"
-                cols="70"
-                rows="10"
+                cols={70}
+                rows={10}
               ></textarea>
               <button className="comment-button" type="submit">
               Submit
