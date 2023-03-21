@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-const Pagination = ({ page, totalPages, goOnePageBack, goOnePageForward }) => {
+const Pagination = ({ page, totalPages, goOnePageBack, goOnePageForward }: {page:Number, totalPages:Number, goOnePageBack:() => void, goOnePageForward:() => void}) => {
   return (
     <div className="pagination-container">
       <ul className="pagination-ul">
@@ -15,7 +15,7 @@ const Pagination = ({ page, totalPages, goOnePageBack, goOnePageForward }) => {
           </button>
         </li>
         <li className="pagination-li">
-          <span className="pagination-btn">{page}</span>
+          <span className="pagination-btn">{String(page)}</span>
         </li>
         <li className="pagination-li">
           <button
