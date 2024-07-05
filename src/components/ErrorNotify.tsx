@@ -1,4 +1,8 @@
-const ErrorNotify = ({ error }) => {
+interface ErrorNotifyProps {
+  error: string[];
+}
+
+const ErrorNotify: React.FC<ErrorNotifyProps> = ({ error }) => {
   return (
     <div className="error-notify">
       {error.map((x) => (
@@ -9,4 +13,5 @@ const ErrorNotify = ({ error }) => {
     </div>
   );
 };
+
 export default ErrorNotify;
