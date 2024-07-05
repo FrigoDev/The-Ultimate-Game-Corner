@@ -82,7 +82,7 @@ const GameDescription = ({ user }: { user: User | undefined }) => {
             </li>
           </ul>
         </div>
-        <Comments gameId={id} sessionUser={user ? { name: user.name } : null} />
+        <Comments gameId={Number.parseInt(id as string)} sessionUser={user} />
       </div>
     </main>
   );

@@ -7,7 +7,7 @@ const Comments = ({
   sessionUser,
 }: {
   gameId: number;
-  sessionUser: { name: string };
+  sessionUser?: { name: string };
 }) => {
   const { addComent, comments } = useComments(gameId);
 
@@ -16,7 +16,7 @@ const Comments = ({
     const form = e.target;
     const formData = new FormData(form as HTMLFormElement);
     const comment = formData.get("comment")?.toString().trim() || "";
-    const user = sessionUser.name;
+    const user = sessionUser?.name;
     await addComent({
       gameId,
       text: comment,
