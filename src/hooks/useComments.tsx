@@ -1,7 +1,8 @@
+import { Comment } from "../types/Comment";
 import { getComments, addComment } from "../utils/dbSocket";
 import { useState, useEffect } from "react";
-const useComments = (id:string) => {
-  const [comments, setComments] = useState([]);
+const useComments = (id: number) => {
+  const [comments, setComments] = useState<Comment[]>([]);
   const uptadeComments = async () => {
     await setComments(await getComments(id));
   };
@@ -9,14 +10,14 @@ const useComments = (id:string) => {
   useEffect(() => {
     uptadeComments();
   }, []);
-  const addComent = async (comment) => {
-    if (comment.author.trim() !== "" && comment.text.trim() !== "") {
+  const addComent = async (comment: Partial<Comment>) => {
+    if (comment.author?.trim() !== "" && comment.text?.trim() !== "") {
       setComments([
-        { ...comment, id: Math.max(...comments.map((x) => x.id)) + 1 },
-        ...comments
+        { ...comment, id: Math.max(...comments.map((x) => x.id)) + 1 } as Comment,
+        ...comments,
       ]);
     }
-    await addComment(comment);
+    await addComment(comment as Comment);
   };
   return { comments, addComent };
 };

@@ -55,7 +55,7 @@ const dataFetcher = async (actualPage = 1, pageSize = 10, search = "") => {
   }
 };
 
-export const getCommentsBygameId = async (id: string) => {
+export const getCommentsBygameId = async (id: number) => {
   try {
     const response = await fetch(`${USER_API_URL}/comments?gameId=${id}`);
     return await response.json();

@@ -11,20 +11,22 @@ import {
   faGamepad,
   faStar
 } from "@fortawesome/free-solid-svg-icons";
-import  {DetailedGame} from  "../types/Game" 
+import { DetailedGame } from "../types/Game";
 import { User } from "../types/user";
 import { useParams } from "react-router-dom";
 
-const GameDescription = ({ user } :{user:User|undefined}) => {
-  const [game, setGame] = useState<DetailedGame | undefined>(undefined)
-  const {gameId:id} = useParams<{gameId:string}>();
-  
+const GameDescription = ({ user }: { user: User | undefined }) => {
+  const [game, setGame] = useState<DetailedGame | undefined>(undefined);
+  const { gameId: id } = useParams<{ gameId: string }>();
+
   const updateGame = async () => {
     setGame(await getGame(Number(id)));
   };
+
   useEffect(() => {
     updateGame();
-  }, []);
+  }, [id]);
+
   if (!game) {
     return (
       <main className="detail-section">
@@ -37,6 +39,7 @@ const GameDescription = ({ user } :{user:User|undefined}) => {
       </main>
     );
   }
+
   return (
     <main className="detail-section">
       <div className="games-section-container">
@@ -79,7 +82,7 @@ const GameDescription = ({ user } :{user:User|undefined}) => {
             </li>
           </ul>
         </div>
-        <Comments gameId={id} sessionUser={user} />
+        <Comments gameId={id} sessionUser={user ? { name: user.name } : null} />
       </div>
     </main>
   );

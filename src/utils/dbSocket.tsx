@@ -16,7 +16,7 @@ const getGames = async (page = 1, limit = 10, filter = "") => {
     games: data,
   };
 };
-const getComments = async (gameId: string) => {
+const getComments = async (gameId: number) => {
   return await getCommentsBygameId(gameId);
 };
 

@@ -2,6 +2,6 @@ export interface Comment {
     gameId:number,
     text:string,
     author: string,
-    date: Date
-
+    date: string,
+    id: number
 }
